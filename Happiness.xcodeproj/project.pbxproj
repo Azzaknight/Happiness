@@ -21,6 +21,7 @@
 		AC838BBA17E81D120005C34D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC838B9C17E81D120005C34D /* UIKit.framework */; };
 		AC838BC217E81D120005C34D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AC838BC017E81D120005C34D /* InfoPlist.strings */; };
 		AC838BC417E81D120005C34D /* HappinessTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AC838BC317E81D120005C34D /* HappinessTests.m */; };
+		AC838BCF17E83E980005C34D /* FaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC838BCE17E83E980005C34D /* FaceView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		AC838BBF17E81D120005C34D /* HappinessTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HappinessTests-Info.plist"; sourceTree = "<group>"; };
 		AC838BC117E81D120005C34D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AC838BC317E81D120005C34D /* HappinessTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HappinessTests.m; sourceTree = "<group>"; };
+		AC838BCD17E83E980005C34D /* FaceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceView.h; sourceTree = "<group>"; };
+		AC838BCE17E83E980005C34D /* FaceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,8 @@
 				AC838BA717E81D120005C34D /* HappinessAppDelegate.h */,
 				AC838BA817E81D120005C34D /* HappinessAppDelegate.m */,
 				AC838BAA17E81D120005C34D /* Main.storyboard */,
+				AC838BCD17E83E980005C34D /* FaceView.h */,
+				AC838BCE17E83E980005C34D /* FaceView.m */,
 				AC838BAD17E81D120005C34D /* HappinessViewController.h */,
 				AC838BAE17E81D120005C34D /* HappinessViewController.m */,
 				AC838BB017E81D120005C34D /* Images.xcassets */,
@@ -253,6 +258,7 @@
 				AC838BA917E81D120005C34D /* HappinessAppDelegate.m in Sources */,
 				AC838BA517E81D120005C34D /* main.m in Sources */,
 				AC838BAF17E81D120005C34D /* HappinessViewController.m in Sources */,
+				AC838BCF17E83E980005C34D /* FaceView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

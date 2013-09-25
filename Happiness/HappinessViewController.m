@@ -7,13 +7,43 @@
 //
 
 #import "HappinessViewController.h"
+#import "FaceView.h"
 
 @interface HappinessViewController ()
 
+@property (nonatomic, weak) IBOutlet FaceView* faceView;
+
 @end
+
+
 
 @implementation HappinessViewController
 
+-(void) setHappiness:(int)happiness {
+    
+    if(_happiness != happiness) _happiness = happiness;
+    [self.faceView setNeedsDisplay]; // Anytime our model changes we do redraw
+    
+}
+
+
+-(void)setFaceView:(FaceView *)faceView {
+    
+    _faceView = faceView;
+    UIPinchGestureRecognizer * pgr = [[UIPinchGestureRecognizer alloc] initWithTarget:self.faceView action:@selector(pinch:)];
+    [self.faceView addGestureRecognizer:pgr];
+
+}
+
+
+- (BOOL)shouldAutorotate {
+    
+    return YES; // support all orientations!
+    
+}
+
+
+//**************************************************************************
 - (void)viewDidLoad
 {
     [super viewDidLoad];
