@@ -129,7 +129,12 @@
     CGPoint mouthCP2 = mouthEnd;
     mouthCP2.x -= MOUTH_H * size * 2/3;
     
-    float smile = 1.0; // this should be delegated! it's our View's data!
+    //float smile = 1.0; // this should be delegated! it's our View's data!
+    float smile = [self.dataSource smileForFaceView:self]; // delegated to the datasource. We could have set the datasource in the storyboard as well.
+    
+    // protection to make sure that datasource does not break the view
+    if (smile < -1) smile = -1;
+    if (smile > 1) smile = 1;
     
     CGFloat smileOffset = MOUTH_SMILE * size * smile;
     mouthCP1.y += smileOffset;

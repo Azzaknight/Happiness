@@ -9,9 +9,10 @@
 #import "HappinessViewController.h"
 #import "FaceView.h"
 
-@interface HappinessViewController ()
+@interface HappinessViewController () <FaceViewDataSource>
 
 @property (nonatomic, weak) IBOutlet FaceView* faceView;
+
 
 @end
 
@@ -32,6 +33,12 @@
     _faceView = faceView;
     UIPinchGestureRecognizer * pgr = [[UIPinchGestureRecognizer alloc] initWithTarget:self.faceView action:@selector(pinch:)];
     [self.faceView addGestureRecognizer:pgr];
+    
+    self.faceView.dataSource = self;
+    
+    UIPanGestureRecognizer *panrg = [[UIPanGestureRecognizer alloc]
+                                     initWithTarget:self action:@selector(panSmile:)];
+    [self.faceView addGestureRecognizer:panrg];
 
 }
 
@@ -39,6 +46,29 @@
 - (BOOL)shouldAutorotate {
     
     return YES; // support all orientations!
+    
+}
+
+
+-(float)smileForFaceView:(FaceView *)sender
+{
+ 
+    return (self.happiness - 50.0) / 50.0;
+    
+}
+
+-(void)panSmile:(UIPanGestureRecognizer*)panRecogniser
+{
+    if (panRecogniser.state == UIGestureRecognizerStateChanged ||
+        panRecogniser.state == UIGestureRecognizerStateEnded) {
+        
+        CGPoint translation = [panRecogniser translationInView:self.faceView];
+//        NSLog(@"the two numbers are %f and %f", translation.x, translation.y);
+        self.happiness += translation.y;
+        [panRecogniser setTranslation:CGPointZero inView:self.faceView];
+ 
+    }
+    
     
 }
 
