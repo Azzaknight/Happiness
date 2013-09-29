@@ -53,7 +53,7 @@
 -(float)smileForFaceView:(FaceView *)sender
 {
  
-    return (self.happiness - 50.0) / 50.0;
+    return (self.happiness - 50) / 50.0;
     
 }
 
@@ -63,8 +63,8 @@
         panRecogniser.state == UIGestureRecognizerStateEnded) {
         
         CGPoint translation = [panRecogniser translationInView:self.faceView];
-//        NSLog(@"the two numbers are %f and %f", translation.x, translation.y);
-        self.happiness += translation.y;
+        //  Pan up to make it happier, pan down to make it sadder
+        self.happiness -= translation.y / 2 ;
         [panRecogniser setTranslation:CGPointZero inView:self.faceView];
  
     }

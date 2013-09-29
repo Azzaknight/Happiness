@@ -8,6 +8,11 @@
 
 #import "FaceView.h"
 
+@interface FaceView ()
+
+
+@end
+
 @implementation FaceView
 
 #define DEFAULT_SCALE 0.90
